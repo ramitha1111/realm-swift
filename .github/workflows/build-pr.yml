@@ -1,3 +1,24 @@
+# Optimized by ci-cost (https://github.com/mariotavarez/ci-cost)
+# Applied 17 optimizations:
+# - [HIGH] Switch "osx-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "osx-26_2" from macOS to ubuntu runner
+# - [HIGH] Switch "osx-26_3" from macOS to ubuntu runner
+# - [HIGH] Switch "osx-26_4_1" from macOS to ubuntu runner
+# - [HIGH] Switch "osx-26_5" from macOS to ubuntu runner
+# - [HIGH] Switch "ios-static-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "ios-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "watchos-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "tvos-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "visionos-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "catalyst-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "cocoapods-osx-26_1" from macOS to ubuntu runner
+# - [HIGH] Switch "cocoapods-osx-26_2" from macOS to ubuntu runner
+# - [HIGH] Switch "cocoapods-osx-26_3" from macOS to ubuntu runner
+# - [HIGH] Switch "cocoapods-osx-26_4_1" from macOS to ubuntu runner
+# - [HIGH] Switch "cocoapods-osx-26_5" from macOS to ubuntu runner
+# - [MEDIUM] Add concurrency group to "build-pr.yml"
+# Estimated savings: ~2 min/run
+#
 
 # This is a generated file produced by scripts/pr-ci-matrix.rb.
 name: Pull request build and test
@@ -7,6 +28,10 @@ on:
       - '**.md'
   workflow_dispatch:
 
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   docs:
     runs-on: macos-26
