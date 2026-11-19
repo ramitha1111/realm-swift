@@ -1,4 +1,3 @@
-
 # This is a generated file produced by scripts/pr-ci-matrix.rb.
 name: Pull request build and test
 on:
@@ -10,6 +9,7 @@ on:
 jobs:
   docs:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test docs
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +20,7 @@ jobs:
       - run: bundle exec sh build.sh verify-docs
   swiftlint:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Check swiftlint
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +30,7 @@ jobs:
 
   osx-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -38,6 +40,7 @@ jobs:
 
   osx-26_2:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx on Xcode 26.2
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.2.app/Contents/Developer'
@@ -47,6 +50,7 @@ jobs:
 
   osx-26_3:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx on Xcode 26.3
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.3.app/Contents/Developer'
@@ -56,6 +60,7 @@ jobs:
 
   osx-26_4_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx on Xcode 26.4.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.4.1.app/Contents/Developer'
@@ -65,6 +70,7 @@ jobs:
 
   osx-26_5:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx on Xcode 26.5
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.5.app/Contents/Developer'
@@ -74,6 +80,7 @@ jobs:
 
   osx-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test osx on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -83,6 +90,7 @@ jobs:
 
   osx-encryption-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test osx-encryption on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -92,6 +100,7 @@ jobs:
 
   swiftpm-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test swiftpm on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -101,6 +110,7 @@ jobs:
 
   swiftpm-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test swiftpm on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -110,6 +120,7 @@ jobs:
 
   swiftpm-debug-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test swiftpm-debug on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -119,6 +130,7 @@ jobs:
 
   swiftpm-debug-26_2:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test swiftpm-debug on Xcode 26.2
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.2.app/Contents/Developer'
@@ -128,6 +140,7 @@ jobs:
 
   swiftpm-debug-26_3:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test swiftpm-debug on Xcode 26.3
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.3.app/Contents/Developer'
@@ -137,6 +150,7 @@ jobs:
 
   swiftpm-debug-26_4_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test swiftpm-debug on Xcode 26.4.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.4.1.app/Contents/Developer'
@@ -146,6 +160,7 @@ jobs:
 
   swiftpm-debug-26_5:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test swiftpm-debug on Xcode 26.5
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.5.app/Contents/Developer'
@@ -155,6 +170,7 @@ jobs:
 
   swiftpm-debug-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test swiftpm-debug on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -164,6 +180,7 @@ jobs:
 
   swiftpm-address-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test swiftpm-address on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -173,6 +190,7 @@ jobs:
 
   swiftpm-thread-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test swiftpm-thread on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -182,6 +200,7 @@ jobs:
 
   ios-static-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test ios-static on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -191,6 +210,7 @@ jobs:
 
   ios-static-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test ios-static on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -200,6 +220,7 @@ jobs:
 
   ios-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test ios on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -209,6 +230,7 @@ jobs:
 
   ios-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test ios on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -218,6 +240,7 @@ jobs:
 
   watchos-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test watchos on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -227,6 +250,7 @@ jobs:
 
   watchos-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test watchos on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -236,6 +260,7 @@ jobs:
 
   tvos-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test tvos on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -245,6 +270,7 @@ jobs:
 
   tvos-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test tvos on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -254,6 +280,7 @@ jobs:
 
   visionos-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test visionos on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -263,6 +290,7 @@ jobs:
 
   visionos-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test visionos on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -272,6 +300,7 @@ jobs:
 
   osx-swift-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx-swift on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -281,6 +310,7 @@ jobs:
 
   osx-swift-26_2:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx-swift on Xcode 26.2
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.2.app/Contents/Developer'
@@ -290,6 +320,7 @@ jobs:
 
   osx-swift-26_3:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx-swift on Xcode 26.3
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.3.app/Contents/Developer'
@@ -299,6 +330,7 @@ jobs:
 
   osx-swift-26_4_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx-swift on Xcode 26.4.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.4.1.app/Contents/Developer'
@@ -308,6 +340,7 @@ jobs:
 
   osx-swift-26_5:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test osx-swift on Xcode 26.5
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.5.app/Contents/Developer'
@@ -317,6 +350,7 @@ jobs:
 
   osx-swift-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test osx-swift on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -326,6 +360,7 @@ jobs:
 
   ios-swift-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test ios-swift on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -335,6 +370,7 @@ jobs:
 
   ios-swift-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test ios-swift on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -344,6 +380,7 @@ jobs:
 
   tvos-swift-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test tvos-swift on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -353,6 +390,7 @@ jobs:
 
   tvos-swift-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test tvos-swift on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -362,6 +400,7 @@ jobs:
 
   osx-swift-evolution-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test osx-swift-evolution on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -371,6 +410,7 @@ jobs:
 
   ios-swift-evolution-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test ios-swift-evolution on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -380,6 +420,7 @@ jobs:
 
   tvos-swift-evolution-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test tvos-swift-evolution on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -389,6 +430,7 @@ jobs:
 
   catalyst-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test catalyst on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -398,6 +440,7 @@ jobs:
 
   catalyst-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test catalyst on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -407,6 +450,7 @@ jobs:
 
   catalyst-swift-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test catalyst-swift on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -416,6 +460,7 @@ jobs:
 
   catalyst-swift-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test catalyst-swift on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -425,6 +470,7 @@ jobs:
 
   xcframework-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test xcframework on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -434,6 +480,7 @@ jobs:
 
   cocoapods-osx-26_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test cocoapods-osx on Xcode 26.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.1.app/Contents/Developer'
@@ -443,6 +490,7 @@ jobs:
 
   cocoapods-osx-26_2:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test cocoapods-osx on Xcode 26.2
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.2.app/Contents/Developer'
@@ -452,6 +500,7 @@ jobs:
 
   cocoapods-osx-26_3:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test cocoapods-osx on Xcode 26.3
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.3.app/Contents/Developer'
@@ -461,6 +510,7 @@ jobs:
 
   cocoapods-osx-26_4_1:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test cocoapods-osx on Xcode 26.4.1
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.4.1.app/Contents/Developer'
@@ -470,6 +520,7 @@ jobs:
 
   cocoapods-osx-26_5:
     runs-on: macos-26
+    timeout-minutes: 60
     name: Test cocoapods-osx on Xcode 26.5
     env:
       DEVELOPER_DIR: '/Applications/Xcode_26.5.app/Contents/Developer'
@@ -479,6 +530,7 @@ jobs:
 
   cocoapods-osx-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test cocoapods-osx on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -488,6 +540,7 @@ jobs:
 
   cocoapods-ios-static-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test cocoapods-ios-static on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -497,6 +550,7 @@ jobs:
 
   cocoapods-ios-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test cocoapods-ios on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -506,6 +560,7 @@ jobs:
 
   cocoapods-watchos-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test cocoapods-watchos on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -515,6 +570,7 @@ jobs:
 
   cocoapods-tvos-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test cocoapods-tvos on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -524,6 +580,7 @@ jobs:
 
   cocoapods-catalyst-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test cocoapods-catalyst on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
@@ -533,6 +590,7 @@ jobs:
 
   ios-swiftui-27_0:
     runs-on: xcode-27
+    timeout-minutes: 60
     name: Test ios-swiftui on Xcode 27.0
     env:
       DEVELOPER_DIR: '/Applications/Xcode_27.0.app/Contents/Developer'
